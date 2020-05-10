@@ -1,0 +1,72 @@
+<div class="bg-primary p-2 text-white" [class.bg-warning]="editing"
+ [class.text-dark]="editing">
+ <h5>{{editing ? "Edit" : "Create"}} Book Record</h5>
+</div>
+
+<form #form="ngForm"  novalidate (ngSubmit)="save(form)">
+ <div class="form-group">
+ <label>Book Name</label>
+ <input class="form-control"  name="name" required [(ngModel)]="product.name" />
+ <span *ngIf="submitted && name.invalid" class="text-danger">
+   Please enter book name
+   </span>
+ </div>
+
+ <div class="form-group">
+ <label>Book Category</label>
+ <input class="form-control" name="category"  [(ngModel)]="product.category" required/>
+ <span *ngIf="submitted && category.invalid" class="text-danger">
+   Please enter Book category
+   </span>
+ </div>
+ <div class="form-group">
+ <label>Description</label>
+ <textarea class="form-control" name="description"
+ [(ngModel)]="product.description">
+ <span *ngIf="submitted && description.invalid" class="text-danger">
+   Please describe 
+   </span>
+ </textarea>
+ </div>
+ <div class="form-group">
+    <label>Book ID</label>
+    <input class="form-control" name="bid" required [(ngModel)]="product.bid" required />
+    <span *ngIf="submitted && bid.invalid" class="text-danger">
+      Please enter Book ID
+      </span>
+    </div>
+ <div class="form-group">
+ <label>Quantity</label>
+ <input class="form-control" name="price" [(ngModel)]="product.price" type="number" required />
+ <span *ngIf="submitted && price.invalid" class="text-danger">
+   Please enter quantity
+   </span>
+ </div>
+<div class="form-group">
+    <label>Purchase Date</label>
+    <input class="form-control" name="datee" [(ngModel)]="product.datee" type="date" required />
+    <span *ngIf="submitted && datee.invalid" class="text-danger">
+      Please enter purchase date
+      </span>
+</div>
+<div class="form-group">
+    <label>Issue Date</label>
+    <input class="form-control" name="date" [(ngModel)]="product.date" type="date" required />
+    <span *ngIf="submitted && date.invalid" class="text-danger">
+      Please enter Issue date
+      </span>
+</div>
+<div class="form-group">
+    <label>Author</label>
+    <input class="form-control" name="author" [(ngModel)]="product.author" type="text" required />
+    <span *ngIf="submitted && author.invalid" class="text-danger">
+      Please enter Author name
+      </span>
+</div>
+ <button type="submit" class="btn btn-primary" [class.btn-warning]="editing">
+ {{editing ? "Save" : "Create"}}
+ </button>
+ <button type="reset" class="btn btn-secondary" routerLink="/admin/main/products">
+ Cancel
+ </button>
+</form>

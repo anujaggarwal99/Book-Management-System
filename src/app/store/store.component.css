@@ -1,0 +1,50 @@
+body{
+    margin: 0px;
+    font-family: 'Open Sans',
+    sans-serif;
+    background-color: rgb(159, 238, 238);
+}
+
+#header .sociable{
+    padding-top:20px;
+}
+#header .sociable ul{
+    display:flex;
+}
+#header .sociable ul li{
+    margin: 0px 10px;
+}
+#header .logo h1 i{
+    position: absolute;
+    font-size: 17px;
+    bottom: -8px;
+    right:120px;
+    color:#2fdab8;
+}
+#header .sociable ul li:not(:first-child) a{
+    color: #fff;
+    height: 30px;
+    padding-top:5px;
+    width:30px;
+    text-align: center;
+    font-size:13px;
+    display:inline-block;
+}
+#header .sociable ul li:first-child{
+    letter-spacing: 2px;
+    font-size:14px;
+    font-weight: bold;
+    padding-top:7px;
+}
+#header .sociable .fb{
+    background-color: #3b5998;
+}
+#header .sociable .tw{
+    background-color: #00acee;
+}
+#header .sociable .ins{
+    background-color: #f77737;
+}
+#header .sociable .link{
+    background-color: #bd081c;
+}
